@@ -1,12 +1,34 @@
 package com.company;
 
+import javax.swing.*;
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-        Calculations vector2d1 = new Vector2d(2.0, 3.0);
-        Calculations vector2d2 = new Vector2d(3.5, 4.1);
-        Calculations vector3d1 = new Vector3d(2.0, 3.0, 4.0);
-        Calculations vector3d2 = new Vector3d(3.5, 4.1, 2.5);
+        Vector2d vector2d1 = new Vector2d(4.0, 8.0);
+        Vector2d vector2d2 = new Vector2d(3.5, 4.1);
+        Vector3d vector3d1 = new Vector3d(3.0, 7.3, 2.6);
+        Vector3d vector3d2 = new Vector3d(1.5, 0.2, 9.2);
+
+        vector2d1.lengthCalc();
+        vector2d2.lengthCalc();
+        Vector2d.sumCalc(vector2d1,vector2d2);
+        Vector2d.getScalar(vector2d1,vector2d2);
+        Vector2d.substactCalc(vector2d1,vector2d2);
+        System.out.println();
+
+        System.out.println("Длина векторов - " + vector3d1.lengthCalc() + " , " + vector3d2.lengthCalc());
+        System.out.println("Скалярное произведение - " + Vector3d.dotProdCalc(vector3d1, vector3d2));
+        System.out.println("Сумма векторов - " + Vector3d.sumCalc(vector3d1, vector3d2));
+        System.out.println("Разность векторов - " + Vector3d.substactCalc(vector3d1, vector3d2));
+
+        Vector2d.vectorCompare(vector2d1,vector2d2);
+        Vector3d.vectorCompare(vector3d1, vector3d2);
+
+
+
+
 
 
 
@@ -14,11 +36,13 @@ public class Main {
 }
 
 
-
-//        У каждого класса должны быть:
-//        - метод, вычисляющий скалярное произведение;
-//        - метод сложения векторов;
-//        - метод разности векторов;
-
-//        - статический метод, который принимает целое число N, и
+//       статический метод, который принимает целое число N, и
 //        возвращает массив случайных векторов размером N.
+//
+//    Предусмотреть метод сравнение векторов.
+//        Предусмотреть метод для вывода информации о векторе.
+//        Каждый из классов должен иметь константу, содержащею описание
+//        вектора.
+//        Например, "Это вектор для двумерной системы координат".
+//        Эта константа так же должна выводиться в методе для вывода
+//        информации о векторе.

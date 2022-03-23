@@ -1,6 +1,6 @@
 package com.company;
 
-public class Vector3d implements Calculations{
+public class Vector3d{
 
     double x,y,z;
 
@@ -10,24 +10,36 @@ public class Vector3d implements Calculations{
         this.z = z;
     }
 
-    @Override
     public double lengthCalc() {
-        double vectorLength = Math.sqrt(Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2));
-        return vectorLength;
+        return Math.sqrt(Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2));
+
     }
 
-    @Override
-    public double dotProdCalc() {
-        return;
+    public static double dotProdCalc(Vector3d vector3d1, Vector3d vector3d2) {
+        return ((vector3d1.x*vector3d2.x)+(vector3d1.y*vector3d2.y)+(vector3d1.z*vector3d2.z));
+
     }
 
-    @Override
-    public double sumCalc() {
-        return;
+    public static String sumCalc(Vector3d vector3d1, Vector3d vector3d2) {
+        double a = vector3d1.x + vector3d2.x;
+        double b = vector3d1.y + vector3d2.y;
+        double c = vector3d1.z + vector3d2.z;
+        return "<" + a + ", " + b + ", " + c + ">";
+
     }
 
-    @Override
-    public double substactCalc() {
-        return;
+    public static String substactCalc(Vector3d vector3d1, Vector3d vector3d2) {
+        double a = vector3d1.x - vector3d2.x;
+        double b = vector3d1.y - vector3d2.y;
+        double c = vector3d1.z - vector3d2.z;
+        return "<" + a + ", " + b + ", " + c + ">";
+    }
+
+    public static void vectorCompare(Vector3d vector3d1, Vector3d vector3d2) {
+        if ((vector3d1.x + vector3d1.y + vector3d1.z - (vector3d2.x + vector3d2.y+ vector3d2.z))>0)
+            System.out.println("vector3d1 > vector3d2");
+        else
+            System.out.println("vector3d1 < vector3d2");
+
     }
 }
