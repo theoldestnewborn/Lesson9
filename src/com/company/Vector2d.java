@@ -1,6 +1,5 @@
 package com.company;
 
-import javax.swing.*;
 
 public class Vector2d {
 
@@ -11,12 +10,19 @@ public class Vector2d {
         this.y = y;
     }
 
+    final String INFO = "Это двухмерный вектор.";
+
+
     public double getX() {
         return x;
     }
 
     public double getY() {
         return y;
+    }
+
+    public void getInfo () {
+        System.out.println( INFO + "Вектор - " + getX() + " и " + getY());
     }
 
     public void lengthCalc() {
